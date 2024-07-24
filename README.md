@@ -1,41 +1,62 @@
-# ZephyrLLMChatbot
-A guideline to build no-cost LLM chatbot 
+# Punjabi_Diet_Expert
 
-This README provides a structured and detailed guide to help users through the process of creating and deploying a customized LLM chatbot using Hugging Face Spaces and Gradio, highlighting key steps and customization options, complete with useful links for easy navigation.
+An AI-powered chatbot providing personalized guidance on Canadian nutrition recommendations.
 
+## Overview
 
-# Build and Deploy Your Custom LLM App in 5 Minutes for Free
+This project implements a LLM chatbot focused on diet and nutrition. It uses advanced natural language processing to provide accurate, context-aware responses to dietary inquiries.
 
-## Introduction
-Have you ever wished to craft a chatbot tailored to your needs? Whether it's a culinary wizard to guide you through complex recipes or an artistic mentor to discuss the nuances of painting techniques, this comprehensive guide is your gateway. We'll walk you through the simple steps to build and deploy your own LLM-based chatbot using [Hugging Face Spaces](https://huggingface.co/spaces) and Gradio—all in just five minutes, and absolutely free of charge!
+## Key Components
 
-## Prerequisites
-Before you  start creating your chatbot, make sure you have the following:
-- **A Hugging Face Account**: Essential for accessing the platform where you'll build and host your chatbot. [Sign up here](https://huggingface.co/join).
+- LLM: HuggingFaceH4/zephyr-7b-beta
+- Embedding: all-MiniLM-L6-v2 sentence transformer
+- Vector Database: FAISS
+- UI: Gradio
+- Knowledge Base: Punjabi Diet Expert PDF
 
-## Setup and Deployment
-1. **Choosing Your Chatbot’s Identity**: Decide what your chatbot will specialize in. This could be anything from a chef, painter, or even a relaxing buddy to help you unwind. The role you choose will define the interactions and capabilities of your chatbot.
+## Features
 
-2. **Logging into Hugging Face**:  Here, you'll need an account to access the tools required for deploying your chatbot. If you don't have an account, signing up is straightforward and quick.
+- RAG-enhanced responses for up-to-date nutritional advice
+- Customizable chat parameters (max tokens, temperature, top-p)
+- User-friendly interface for easy interaction
 
-3. **Navigating to Hugging Face Spaces**: Spaces are where the magic happens. This section of Hugging Face allows users to create and manage their applications seamlessly. Navigate to [Spaces](https://huggingface.co/spaces) to get started.
+## Setup
 
-4. **Creating Your Space**: Initiate a new space by clicking on 'Create New Space'. It’s important that the name of your Space reflects the chatbot's role, as it helps in identifying the application’s purpose at a glance.
+1. Clone the repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Ensure "Punjabi Diet Expert-pdf.pdf" is in the project directory
+4. Run the application: `python app.py`
 
-5. **Configuring Your Chatbot**:
-   - **Selecting the Framework and Model**: Choose 'Gradio' as the framework for its user-friendly interface capabilities, and select a suitable model, such as 'Zephyr 7B', known for its versatility across various tasks.
-   - **Customization**: Here’s where you personalize the chatbot. Depending on the selected role, you might want to tailor system messages and interaction style. This customization will enable your chatbot to interact appropriately according to its role.
+## Usage
 
-6. **Deployment**: Once setup is complete, deploy your chatbot by simply clicking the create button. Deployment usually takes a couple of minutes. After this, your chatbot will be up and running and ready to interact.
+The chatbot can answer questions about:
+- Daily serving recommendations for different food groups
+- Serving size examples
+- Nutritional guidelines specific to Canada's Food Guide
 
-## Customization Example
-To make your chatbot truly unique, consider personalizing it extensively. For instance, if you choose a 'Relaxing Buddy' role:
-- Modify the system messages to include comforting phrases and stress-relief tips.
-- Program the chatbot to suggest relaxation exercises, guide through meditation sessions, or simply offer soothing conversations.
+## Technical Details
+- User queries trigger a semantic search in the indexed documents
+- Retrieved context is combined with the query for LLM processing
+- Responses are generated considering both the query and relevant guide sections
 
- Explore different roles and tweak the system instructions to discover the full potential of your chatbot. Don’t forget to share your creations and experiences, as your insights could inspire others in their chatbot development.
+## Limitations
 
- If you wish to contribute: Please fork this repo. 
+This assistant is based on a specific nutritional guide and should not replace professional medical advice. It's intended for general information only.
 
- For any question reach me out @ turna.fardousi@gmail.com
+## Future Improvements
 
+- Expand the knowledge base with additional nutritional resources
+- Implement multi-language support for broader accessibility
+- Add visual aids for serving sizes and food groups
+
+## Contribution
+
+Contributions to improve the assistant's accuracy, expand its knowledge, or enhance its features are welcome. Please submit pull requests or open issues for discussion.
+
+## Contact
+
+For questions or feedback, please contact: ha4369939@alphacollege.me
+
+---
+
+Disclaimer: This project is for educational purposes and should not be used as a substitute for professional nutritional or medical advice.
